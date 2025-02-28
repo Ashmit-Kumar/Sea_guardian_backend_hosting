@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectDB = async (Database) => {
   try {
     const db_url = process.env.MONGODB_URL;
-    console.log(db_url);
+    // console.log(db_url);
     if (!db_url) {
       throw new Error('MongoDB URL is not defined in environment variables');
     }
