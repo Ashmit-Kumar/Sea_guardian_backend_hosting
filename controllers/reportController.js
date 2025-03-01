@@ -1,7 +1,7 @@
 const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const Reports = require("../models/details");
 require("dotenv").config();
-
+// require('aws-sdk/lib/maintenance_mode_message').suppress = true;
 const AWS_REGION = process.env.AWS_REGION;
 const BUCKET_NAME = process.env.AWS_BUCKET_NAME;
 const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
@@ -22,12 +22,9 @@ exports.submitReport = async (req, res) => {
             name,
             date,
             address,
-            contact,
-            email,
             locationPollution,
             typeOfPollution,
             areaOfPollution,
-            polybagsPresent,
             latitude,
             longitude,
         } = req.body;
@@ -52,12 +49,9 @@ exports.submitReport = async (req, res) => {
             name,
             date,
             address,
-            contact,
-            email,
             locationPollution,
             typeOfPollution,
             areaOfPollution,
-            polybagsPresent,
             image: imageUrl,
             latitude,
             longitude,

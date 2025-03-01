@@ -14,30 +14,12 @@ const ReportsSchema = new Schema({
         type: String,
         required: true
     },
-    contact: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        validate: {
-            validator: function(v) {
-                return /\S+@\S+\.\S+/.test(v);
-            },
-            message: props => `${props.value} is not a valid email address!`
-        }
-    },
     locationPollution: String,
     typeOfPollution: {
         type: String,
         required: true
     },
     areaOfPollution: {
-        type: String,
-        required: true
-    },
-    polybagsPresent: {
         type: String,
         required: true
     },

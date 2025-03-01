@@ -11,7 +11,7 @@ const connectDB = async (Database) => {
       dbName: Database, 
     });
     console.log('MongoDB connected');
-    console.log(mongoose.connect(db_url));
+    // console.log(mongoose.connect(db_url));
   } catch (error) {
     console.error('MongoDB connection error:', error);
   }
